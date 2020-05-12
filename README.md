@@ -18,7 +18,3 @@ The [Server](https://git.ece.iastate.edu/sd/sdmay20-18/-/tree/master/Server) mod
 **4.) snapcrack**
 
 The [snapcrack](https://git.ece.iastate.edu/sd/sdmay20-18/-/tree/master/snapcrack) module contains the code for the React web portal.
-
-
-
-# SnapCrack
