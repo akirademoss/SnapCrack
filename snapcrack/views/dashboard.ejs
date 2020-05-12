@@ -1,0 +1,352 @@
+<!--<html>
+<style>
+    body{
+        background-color: deepskyblue;
+        color: black;
+        text-align: center;
+
+    }
+    h1{
+        border-style: groove;
+        border-color: black;
+        height: 100px;
+        width: 100%;
+        font-size: 100px;
+        margin-bottom: 0;
+    }
+    button{
+        background-color: black;
+        color: deepskyblue;
+        font-size: 30px;
+        height: 35px;
+        font-size: 25px;
+        text-align: center;
+    }
+    h2{
+        font-size: 40px;
+    }
+
+    .sumbit{
+
+    }
+    .table{
+        width: 50%;
+        height: 100%;
+        margin: auto;
+        font-size: 30px;
+        border-style: groove;
+        border-color: black;
+    }
+    head{
+        background-color: black;
+    }
+    .sidebar{
+        width: 100%;
+        height: 40px;
+        margin: auto;
+        text-align: center;
+        border-style: groove;
+        border-color: black;
+    }
+    .remove {
+        width: 100%;
+        height: 15px;
+        font-size: 10px;
+        alignment: bottom;
+        text-align: center;
+    }
+
+
+</style>
+
+<head>
+
+    </script>
+</head>
+<body>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<div class="background-image-blur"></div>
+<head>
+    <script>
+        function remove(a){
+            document.getElementById(a).classList.toggle("show");
+            document.getElementById("new").value = a;
+            a
+        }
+        function close(){
+            document.getElementById("yeet").classList.toggle("close");
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+    <style>
+
+map {
+    height: 100%;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th{
+  text-align: center;
+  padding: 5px;
+}
+td{
+    background-color: #FFFFFF;
+    text-align: center;
+    padding: 5px;
+}
+th {
+  background-color: #000000;
+  color: white;
+}
+
+.hidden{
+    display: none;
+    background: black;
+    height: 150px;
+    width: 75%;
+    margin: auto;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    margin-bottom: -100px;
+    color: white;
+    position: absolute;
+    text-align: center;
+}
+.hidden a{
+
+
+}
+.show{
+    display: block;
+}
+.close{
+    display: none;
+    position: relative;
+}
+.hideText{
+    display:none;
+}
+
+</style>
+<body>
+ <div class="main">
+
+        <section class="signup">
+             <div class="container">
+            <p align="center"><b><font size="30" color="black" align="center" >SnapCrack</font></b></p>
+                 
+   
+        <table>
+            <tr>
+                <th colspan="7" align="center"><p style="font-size:25px" style="color:white"> Dashboard <p></p></th>
+            </tr>
+
+                <th>
+                    <form action = '/remove-crack' method="POST">
+                        <button id="close-image"><img src="/public/trashbin.png"></button>
+                    </form>
+                </th>
+                <th>
+                    <form action = '/edit-tags' method="POST">
+                        <button value = "Edit Tags" class= tags> Edit Tags </button>
+                    </form>
+                </th>
+
+            </tr>
+            </table>
+    
+                 <p>
+                 </p>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Tags</th>
+        </tr>
+        <% for(var i = 0; i < cracks.length; i++) { %>
+            <div>
+            <tr>
+                <td> <%= cracks[i].id %></td>
+                <td> <%= cracks[i].location %> </td>
+                <td> <%= cracks[i].date %> </td>
+                <td> <%= cracks[i].tag %> </td>
+                <td>
+                    <input type="button" class= "form-remove" value="Remove" onclick="remove(<%= cracks[i].id %>)">
+                </td>
+            </tr>
+                <input type="text" class="hide"  name="value" id="value" value= <%= cracks[i].id %>/>
+                <div class="hidden" id="yeet">
+                    <a>
+                        Are you sure you want to remove the display?
+                    </a>
+                <p>
+                    <a>
+                        <form method="POST" action="remove-display">
+                            <button value = "Remove Display" class= sumbit>Yes</button>
+                            <input type="text" class="hide" value="" name="new" id="new"/>
+                        </form>
+                        <form method="POST" action="reset-display">
+                            <button value = "Remove Display" class= sumbit>No</button>
+                        </form>
+                    </a>
+                </p>
+                </div>
+
+            </div>
+
+        <% } %>
+
+    </table>
+            </div>
+     </section>
+    </div>
+ <div id="map"></div>
+     <script>
+         var ReactPanels = require('react-panels')
+         var Panel = ReactPanels.Panel;
+         var Tab = ReactPanels.Tab;
+         var Toolbar = ReactPanels.Toolbar;
+         var Content = ReactPanels.Content;
+         var Footer = ReactPanels.Footer;
+         var http = require("http");
+
+         var crackList = React.createClass({
+             render: function () {
+                 return (
+                     <Panel theme="flexbox2">
+                     <Tab title="One" icon="fa fa-plane">
+                     <Toolbar>Toolbar content of One</Toolbar>
+                 <Content>Content of One</Content>
+                 <Footer>Footer content of One</Footer>
+                 </Tab>
+                 <Tab title="Two" icon="fa fa-fire">
+                     <Content>Content of Two</Content>
+                 </Tab>
+                 </Panel>
+             );
+             }
+         });
+
+         var crackImage = React.createClass({
+             render: function () {
+                 return (
+                     <Panel theme="flexbox2">
+                     <Tab title="One" icon="fa fa-plane">
+                     <Toolbar>Toolbar content of One</Toolbar>
+                 <Content>Content of One</Content>
+                 <Footer>Footer content of One</Footer>
+                 </Tab>
+                 <Tab title="Two" icon="fa fa-fire">
+                     <Content>Content of Two</Content>
+                 </Tab>
+                 </Panel>
+             );
+             }
+         });
+
+         var crackDetails = React.createClass({
+             render: function () {
+                 return (
+                     <Panel theme="flexbot2">
+                     <Tab title="One" icon="fa fa-plane">
+                     <Toolbar>Toolbar content of One</Toolbar>
+                 <Content>Content of One</Content>
+                 <Footer>Footer content of One</Footer>
+                 </Tab>
+                 <Tab title="Two" icon="fa fa-fire">
+                     <Content>Content of Two</Content>
+                 </Tab>
+                 </Panel>
+             );
+             }
+         });
+
+         http.get("document.getElementById(currCrack).src='data:image/jpeg;base64",
+             function(req) {
+                 var body = '';
+
+                 req.on('data', function(chunk) {
+                     body += chunk;
+                 });
+
+                 req.on('end', function() {
+                     try
+                     {
+                         var json = JSON.parse(body);
+
+                         var gpsCoordinates = parseGPSCoordinates(json);
+
+                         console.log(gpsCoordinates);
+                     }
+                     catch (e)
+                     {
+                         console.log('GPS Coordinates not found');
+                     }
+                 });
+             }
+         );
+
+         function parseGPSCoordinates(data)
+         {
+             if (data['GPS'] === undefined)
+                 return 'GPS Coordinates not found';
+
+             var values = {};
+
+             values['LAT'] = data['GPS']['GPSLatitudeRef'];
+             values['LONG'] = data['GPS']['GPSLongitudeRef'];
+             values['LAT_DEG'] = applyDivision(data['GPS']['GPSLatitude'][0]);
+             values['LAT_MIN'] = applyDivision(data['GPS']['GPSLatitude'][1]);
+             values['LAT_SEC'] = applyDivision(data['GPS']['GPSLatitude'][2]);
+             values['LONG_DEG'] = applyDivision(data['GPS']['GPSLongitude'][0]);
+             values['LONG_MIN'] = applyDivision(data['GPS']['GPSLongitude'][1]);
+             values['LONG_SEC'] = applyDivision(data['GPS']['GPSLongitude'][2]);
+
+             return format("{LAT} {LAT_DEG}° {LAT_MIN}' {LAT_SEC}'' {LONG} {LONG_DEG}° {LONG_MIN}' {LONG_SEC}''", values);
+         }
+
+         
+         function applyDivision(value)
+         {
+             var tokens = value.split('/');
+             return parseInt(tokens[0], 10) / parseInt(tokens[1], 10);
+         }
+
+         function format(str, values)
+         {
+             Object.keys(values).forEach(function(key) {
+                 str = str.replace('{' + key + '}', values[key]);
+             });
+
+             return str;
+         }
+         var map;
+         function initMap() {
+             map = new google.maps.Map(document.getElementById('map'), {
+                 center: {lat: gpsCoords.LAT[currCrack], lng: gpsCoords.lng[currCrack]},
+                 zoom: 8
+             });
+         }
+     </script>
+     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+             async defer></script>
+
+</body>
+</html>
