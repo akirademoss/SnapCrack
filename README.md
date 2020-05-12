@@ -18,3 +18,7 @@ The [Server](https://git.ece.iastate.edu/sd/sdmay20-18/-/tree/master/Server) mod
 **4.) snapcrack**
 
 The [snapcrack](https://git.ece.iastate.edu/sd/sdmay20-18/-/tree/master/snapcrack) module contains the code for the React web portal.
+
+## Additional Files for Training
+
+the SnapCrack dataset used to train the model can be found [here](https://drive.google.com/file/d/1Nl70wNflgs3ek0_dapJ1MqloVYuOc9Os/view?usp=sharing), aswell as the corresponding tfrecord files can be found [here](https://drive.google.com/open?id=1JUVAeQKUlf1-SQaz1TxZf-O4WlaXLZvf).  These can be used or re-generated to create a new model.
