@@ -1,0 +1,26 @@
+<annotation>
+	<folder>images</folder>
+	<filename>pos-73.jpg</filename>
+	<path>/home/mclovin/Pictures/sign_dataset/images/pos-73.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>580</width>
+		<height>800</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>sign</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>141</xmin>
+			<ymin>173</ymin>
+			<xmax>416</xmax>
+			<ymax>452</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>images</folder>
+	<filename>pos-286.jpg</filename>
+	<path>/home/mclovin/Pictures/sign_dataset/images/pos-286.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1920</width>
+		<height>1090</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>sign</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1056</xmin>
+			<ymin>457</ymin>
+			<xmax>1079</xmax>
+			<ymax>480</ymax>
+		</bndbox>
+	</object>
+</annotation>
