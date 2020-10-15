@@ -1,0 +1,59 @@
+#training with train.py example cml args
+python3 train.py \
+	--logtostderr \
+	--train_dir=trainig/ \
+	--pipeline_config_path=training/ssd
+
+#visualize in tensorboard
+tensorboard --logtostderr --logdir=training/
+
+
+
+
+#exporting to graph format
+python3 export_tflite_ssd_graph.py \
+	--pipeline_config_path=./ssd_mobilenet_v1_pets.config \
+	--trained_checkpoint_prefix=./training/models/model.ckpt-110765 \
+	--output_directory=./crack_detect_graph2 \
+	--add_postprocessing_op=true
+
+
+
+
+#converting to tflite
+tflite_convert \
+	--graph_def_file=crack_detect_graph2/tflite_graph.pb \
+	--output_file=crack_detect_graph2/model.tflite \
+	--output_format=TFLITE \
+	--input_arrays=normalized_input_image_tensor \
+	--input_shapes=1,300,300,3 \
+	--inference_type=FLOAT \
+	--output_arrays="TFLite_Detection_PostProcess,TFLite_Detection_PostProcess:1,TFLite_Detection_PostProcess:2,TFLite_Detection_PostProcess:3" \
+	--allow_custom_ops
+
+
+
+
+#running the evaluation, note you can also edit settings in the config (eval_config)
+python3 model_main.py \
+	--run_once \
+	--checkpoint_dir=training/ \
+	--model_dir=eval/ \
+	--pipeline_config_path=training/ssd_mobilenet_v1_pets.config
+
+#visualize in tensorboard
+tensorboard --logtostderr --logdir=eval/
+
+
+
+
+#training using model_main.py
+python3 model_main.py \
+    --pipeline_config_path=ssd_mobilenet_v1_pets.config \
+    --model_dir=training/ \
+    --num_train_steps=150000 \
+    --sample_1_of_n_eval_examples=1 \
+    --alsologtostderr
+
+
+
