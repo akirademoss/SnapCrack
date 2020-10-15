@@ -5,7 +5,7 @@ SnapCrack is an Android application and web UI that is capable of crack detectio
 
 **1.) SnapCrack_App**
 
-The [SnapCrack_App](https://git.ece.iastate.edu/sd/sdmay20-18/-/tree/master/SnapCrack_App) module contains the Snapcrack Android Application.
+The [SnapCrack_App](https://github.com/akirademoss/SnapCrack/tree/master/SnapCrack_App) module contains the Snapcrack Android Application.
 
 **2.) Training**
 
@@ -13,11 +13,11 @@ The [Training](https://git.ece.iastate.edu/sd/sdmay20-18/tree/master/Training) m
 
 **3.) Server**
 
-The [Server](https://git.ece.iastate.edu/sd/sdmay20-18/-/tree/master/Server) module contains basic testing for sending images to a server and database.
+The [Server](https://github.com/akirademoss/SnapCrack/tree/master/Server) module contains basic testing for sending images to a server and database.
 
 **4.) snapcrack**
 
-The [snapcrack](https://git.ece.iastate.edu/sd/sdmay20-18/-/tree/master/snapcrack) module contains the code for the React web portal.
+The [snapcrack](https://github.com/akirademoss/SnapCrack/tree/master/snapcrack) module contains the code for the React web portal.
 
 ## Additional Files for Training
 
