@@ -1,6 +1,9 @@
 # SnapCrack 
 SnapCrack is an Android application and web UI that is capable of crack detection and localization in real time.  SnapCrack leverages basic object detection algorithms to detect cracks in real-time.  After a crack has been detected on the mobile application, an image will be stored to the device and sent to a database where it will be stored until it is viewed in a web portal.  This repository contains this application as well as tools for modifying the dataset and training the object detection model.  
 
+## General Use Instructions
+[pdf explaining general use](https://github.com/akirademoss/SnapCrack/blob/master/Use%20Instructions.pdf)
+
 ## Summary of Repository
 
 **1.) SnapCrack_App**
