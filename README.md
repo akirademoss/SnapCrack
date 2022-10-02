@@ -9,7 +9,7 @@ The [SnapCrack_App](https://github.com/akirademoss/SnapCrack/tree/master/SnapCra
 
 **2.) Training**
 
-The [Training](https://git.ece.iastate.edu/sd/sdmay20-18/tree/master/Training) module contains installation steps and tutorials for training a custom object detector.  
+The [Training](https://github.com/akirademoss/SnapCrack/tree/master/Training) module contains installation steps and tutorials for training a custom object detector.  
 
 **3.) Server**
 
